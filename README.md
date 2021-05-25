@@ -7,4 +7,4 @@ See the `docs` directory to find documentation specific to each API.
 Email us at: data-sharing-support@leafly.com
 
 ## API List
-- [Strain Data API](strain_data_api)
+- [Strain Data API](docs/strain_data_api)
