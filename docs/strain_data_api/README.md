@@ -22,7 +22,7 @@ Provides access to Leafly strain data. Data is made available via CSVs. Each CSV
 | Info | `...leafly.com/api/v1/strains/info`|
 | Reviews | `...leafly.com/api/v1/strains/reviews` |
 
-See [here](https://fill_me_in_please.com "Data source schemas") for the schema of each data source.
+See [here](DATA_SOURCE_SCHEMAS.md "Data source schemas") for the schema of each data source.
 
 ## Usage
 
