@@ -10,7 +10,6 @@ Provides access to Leafly strain data. Data is made available via CSVs. Each CSV
 - [Data Sources](#data-sources)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [Contact](#contact)
 
 ## Prerequisites
 - API key (provided by account manager)
