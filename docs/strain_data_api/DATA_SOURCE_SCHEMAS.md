@@ -3,9 +3,9 @@
 Use this doc to determine the composition of each data source per subscription tier.
 
 **Tiers:**
-- [Any](tier-any) (meaning all tiers receive these exports)
-- [Standard](tier-standard)
-- [Pro](tier-pro)
+- [Any](#tier-any) (meaning all tiers receive these exports)
+- [Standard](#tier-standard)
+- [Pro](#tier-pro)
 
 **Notes:**
 - A strain's slug is unique whereas a strain's name is not necessarily unique
