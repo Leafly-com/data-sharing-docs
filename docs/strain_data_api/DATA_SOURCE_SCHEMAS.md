@@ -20,7 +20,7 @@ Use this doc to determine the composition of each data source per subscription t
 | `strain_slug` | `varchar` | | Unique name associated with a given strain |
 | `strain_name` | `varchar` | | Presentation name associated with a given strain |
 | `strain_page_url` | `varchar` | | URL to the given strain's page on Leafly.com |
-| `strain_category` | `varchar` | &check; | One of the following strain type designations: indica, sativa, hybrid |
+| `strain_category` | `varchar` | &check; | One of the following designations: indica, sativa, hybrid |
 | `strain description` | `varchar` | &check; | Text description used on the given strain's page on Leafly.com |
 | `parent_strain_slugs` | `varchar` | &check; | JSON array of slugs of strains that are the putative biological parents of the given strain |
 | `child_strain_slugs` | `varchar` | &check; | JSON array of slugs of strains that are the putative biological descendants of the given strain |
