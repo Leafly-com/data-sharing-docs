@@ -44,7 +44,7 @@ print(response.json())
 
 2. Response will be in JSON format and will contain the following keys:
 
-  - `last_modified`: UTC timestamp indicating when the CSV was refreshed
+  - `last_modified`: UTC timestamp indicating when the CSV was last refreshed
   - `download_url`: a [presigned URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html "AWS presigned URL doc") that will enable you to download the CSV
 
 ```json
