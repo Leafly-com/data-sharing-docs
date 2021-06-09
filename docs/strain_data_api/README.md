@@ -44,13 +44,13 @@ print(response.json())
 
 2. Response will be in JSON format and will contain the following keys:
 
-  - `last_modified`: UTC timestamp indicating when the CSV was generated
+  - `last_modified`: UTC timestamp indicating when the CSV was refreshed
   - `download_url`: a [presigned URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html "AWS presigned URL doc") that will enable you to download the CSV
 
 ```json
 {
   "last_modified": "2021-05-24T08:03:17.169Z",
-  "download_url": "https://data-warehouse-data.s3.us-west-2.amazonaws.com/strain_data_api_exports/tier%3Dstandard/strain_reviews.csv.gz?response-content-disposition=attachment%3B%20filename%3D%22strain_reviews.csv.gz%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5G7KJKOGGAZMKU4H%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T025749Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=c86c1d1beab998aa5e2c35ec33357fca05cb81e9fa3975e0b16df219cef84c8d"
+  "download_url": "https://data-warehouse-data.s3.us-west-2.amazonaws.com/strain_data_api/exports/tier%3Dstandard/strain_reviews.csv.gz?response-content-disposition=attachment%3B%20filename%3D%22strain_reviews.csv.gz%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5G7KJKOGGAZMKU4H%2F20210525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210525T025749Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=c86c1d1beab998aa5e2c35ec33357fca05cb81e9fa3975e0b16df219cef84c8d"
 }
 ```
 
