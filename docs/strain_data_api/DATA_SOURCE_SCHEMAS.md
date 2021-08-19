@@ -9,9 +9,19 @@ Use this doc to determine the composition of each data source per subscription t
 
 **Notes:**
 - A strain's slug is unique whereas a strain's name is not necessarily unique
-- Review exports use review data that is publicly available, moderator-approved, and not deleted
+- Review exports use Leafly strain review data that is publicly available, moderator-approved, and not deleted
 
 ## Tier: Any
+
+**Data Source:** Attributes
+
+| Column name | Data type | Is nullable? | Description |
+| --- | --- | :---: | --- |
+| `strain_slug` | `varchar` | | Unique name associated with a given strain |
+| `strain_name` | `varchar` | | Presentation name associated with a given strain |
+| `attribute_type` | `varchar` | | Type/category of strain attribute measured |
+| `attribute_name` | `varchar` | | Name of the strain attribute measured |
+| `attribute_value` | `varchar` | &check; | Value of the strain attribute measured |
 
 **Data Source:** Info
 
@@ -24,17 +34,9 @@ Use this doc to determine the composition of each data source per subscription t
 | `strain description` | `varchar` | &check; | Text description used on the given strain's page on Leafly.com |
 | `parent_strain_slugs` | `varchar` | &check; | JSON array of slugs of strains that are the putative biological parents of the given strain |
 | `child_strain_slugs` | `varchar` | &check; | JSON array of slugs of strains that are the putative biological descendants of the given strain |
+| `keywords` | `varchar` | &check; | JSON array of keywords extracted from the strain's Leafly description |
 
 ## Tier: Standard
-
- **Data Source:** Attributes
-
-| Column name | Data type | Is nullable? | Description |
-| --- | --- | :---: | --- |
-| `strain_slug` | `varchar` | | Unique name associated with a given strain |
-| `strain_name` | `varchar` | | Presentation name associated with a given strain |
-| `attribute_name` | `varchar` | | Name of the strain attribute measured |
-| `attribute_value` | `float` | &check; | Value of the strain attribute measured |
 
 **Data Source:** Reviews
 
@@ -45,15 +47,6 @@ Use this doc to determine the composition of each data source per subscription t
 | `num_reviews` | `integer` | | Number of reviews of the given strain|
 
 ## Tier: Pro
-
- **Data Source:** Attributes
-
-| Column name | Data type | Is nullable? | Description |
-| --- | --- | :---: | --- |
-| `strain_slug` | `varchar` | | Unique name associated with a given strain |
-| `strain_name` | `varchar` | | Presentation name associated with a given strain |
-| `attribute_name` | `varchar` | | Name of the strain attribute measured |
-| `attribute_value` | `float` | &check; | Value of the strain attribute measured |
 
 **Data Source:** Reviews
 
