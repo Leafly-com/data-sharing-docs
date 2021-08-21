@@ -271,13 +271,13 @@ Unless otherwise specified, definitions for attributes of the following attribut
 
 ## Extra clarification
 
-#### Terpene measurements
+**Terpene measurements**
 
 Average terpene measurements are calculated after grouping samples into clusters using [DBSCAN clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) and then averaging terpene measurements of samples that are assigned to the dominant cluster(s)
 
 <a name="chemotype">
 
-#### How is the chemotype of a sample determined?
+**How is the chemotype of a sample determined?**
 
 ```
 if CBD is null or THC is null or CBD and THC are both 0
@@ -294,7 +294,7 @@ else
 
 <a name="data_completeness">
 
-#### Data completeness
+**Data completeness**
 
 ```
 if sample has terpene data
@@ -313,7 +313,7 @@ where:
 
 <a name="calming_energizing_ratio">
 
-#### Calming-Energizing ratio
+**Calming-Energizing ratio**
 
 ```
 (sum of energizing effect votes - sum of calming effect votes) /
@@ -329,7 +329,7 @@ where:
 
 <a name="weighted_rating">
 
-#### Weighted rating formula
+**Weighted rating formula**
 
 Taken from IMDb (see [here](https://help.imdb.com/article/imdb/track-movies-tv/ratings-faq/G67Y87TFYYP6TWAV#calculatetop))
 
@@ -351,7 +351,7 @@ where:
 
 <a name="is_trending">
 
-#### What does "is_trending" mean?
+**What does "is_trending" mean?**
 
 ```
 if unique pageviews for the given strain >= median unique pageviews for all strains
