@@ -278,31 +278,33 @@ Average terpene measurements are calculated after grouping samples into clusters
 
 ### How is the chemotype of a sample determined?
 
+Our chemotype definitions are based on published scientific research (see [here](https://www.nature.com/articles/s41598-018-22755-2#Sec18)).
+
 ```
-if CBD is null or THC is null or CBD and THC are both 0
+if CBD is null or THC is null or (CBD and THC are both 0)
     chemotype => null
-else if (CBD is equal to 0 and THC > 0) or THC/CBD >= 5
-    chemotype => 1
-else if THC/CBD >= 0.2
-    chemotype => 3
+else if (CBD is equal to 0 and THC > 0) or THC:CBD ratio is 5:1 or greater
+    chemotype => 'THC-dominant'
+else if THC:CBD ratio is 1:5 or less
+    chemotype => 'CBD-dominant'
 else
-    chemotype => 2
+    chemotype => 'CBD/THC-balanced'
 ```
 
 ### Data completeness
 
 ```
-if sample has terpene data
-    data_completeness => 1
-else if sample has cannabinoid data
-    data_completeness => 0.5
+if sample has cannabinoid data and terpene data
+    data_completeness => 'complete'
+else if sample has cannabinoid data or terpene data
+    data_completeness => 'partial'
 else
-    data_completeness => 0
+    data_completeness => 'incomplete'
 ```
 
 where:
-- `has terpene data` means pinene measurement is non-null and > 0
 - `has cannabinoid data` means total CBD & total THC are both non-null and their sum > 0
+- `has terpene data` means pinene measurement is non-null and > 0
 
 ### Calming-Energizing ratio
 
