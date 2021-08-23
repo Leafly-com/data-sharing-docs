@@ -7,15 +7,15 @@ This doc provides a definition for each distinct strain attribute.
 Unless otherwise specified, definitions for attributes of the following attribute types are the same.
 
 - `condition_count`: Count of strain reviews where the strain is identified as helping with the given condition
-- `condition_score`: Z-score of weighted rating (see [here](#weighted_rating) for definition) using the count of strain reviews where the strain is identified as helping with the given condition
+- `condition_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as helping with the given condition
 - `effect_count`: Count of strain reviews where the strain is identified as producing the given effect
-- `effect_score`: Z-score of weighted rating (see [here](#weighted_rating) for definition) using the count of strain reviews where the strain is identified as producing the given effect
+- `effect_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as producing the given effect
 - `flavor_count`: Count of strain reviews where the strain is identified as having the given flavor
-- `flavor_score`: Z-score of weighted rating (see [here](#weighted_rating) for definition) using the count of strain reviews where the strain is identified as having the given flavor
+- `flavor_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as having the given flavor
 - `negative_count`: Count of strain reviews where the strain is identified as producing the given negative effect
-- `negative_score`: Z-score of weighted rating (see [here](#weighted_rating) for definition) using the count of strain reviews where the strain is identified as producing the given negative effect
+- `negative_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as producing the given negative effect
 - `symptom_count`: Count of strain reviews where the strain is identified as producing the given symptom
-- `symptom_score`: Z-score of weighted rating (see [here](#weighted_rating) for definition) using the count of strain reviews where the strain is identified as producing the given symptom
+- `symptom_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as producing the given symptom
 
 **Notes**:
 - Any `*_count` or `*_score` type attribute is sourced from Leafly strain reviews that are publicly available, moderator-approved, and not deleted
@@ -23,7 +23,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 
 | Type | Name | Standard tier | Pro tier | Definition |
 | --- | --- | :---: | :---: | --- |
-| `analytics` | `is_trending` |  | &check; | Boolean value indicating whether the given strain is trending according to unique pageview counts/growth (see [here](#is_trending) for definition) |
+| `analytics` | `is_trending` |  | &check; | Boolean value indicating whether the given strain is trending according to unique pageview counts/growth (see [here](#what-does-is_trending-mean) for definition) |
 | `analytics` | `percent_change` |  | &check; | Year-over-year percent change in the percentage of unique strain pageviews attributed to the given strain |
 | `analytics` | `pop_rank` |  | &check; | Rank according to the count of unique pageviews attributed to the given strain for two consecutive years. The higher the count of unique pageviews, the lower the rank. |
 | `analytics` | `unique_pageviews_y1` |  | &check; |  |
@@ -34,7 +34,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 | `cannabinoid` | `cbd_percentile_75` |  | &check; | 75% quantile of CBD measurements |
 | `cannabinoid` | `cbd_potency_score` |  | &check; | Median CBD measurement converted to a Z-score and binned |
 | `cannabinoid` | `cbg_percentile_50` | &check; | &check; | 50% quantile of CBG measurements |
-| `cannabinoid` | `thc_cbd_chemotype` |  | &check; | The mode of chemotypes. See [here](#chemotype) for details on how chemotype is determined. |
+| `cannabinoid` | `thc_cbd_chemotype` |  | &check; | The mode of chemotypes. See [here](#how-is-the-chemotype-of-a-sample-determined) for details on how chemotype is determined. |
 | `cannabinoid` | `thc_percentile_25` |  | &check; | 25% quantile of THC measurements |
 | `cannabinoid` | `thc_percentile_50` | &check; | &check; | 50% quantile of THC measurements |
 | `cannabinoid` | `thc_percentile_75` |  | &check; | 75% quantile of THC measurements |
@@ -106,7 +106,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 | `effect_count` | `tingly` |  | &check; | Effect: "Tingly" |
 | `effect_count` | `uplifted` |  | &check; | Effect: "Uplifted" |
 | `effect_score` | `aroused` |  | &check; | Effect: "Aroused" |
-| `effect_score` | `ce_score` | &check; | &check; | Calming-Energizing ratio (see [here](#calming_energizing_ratio) for definition) converted to a Z-score |
+| `effect_score` | `ce_score` | &check; | &check; | Calming-Energizing ratio (see [here](#calming-energizing-ratio) for definition) converted to a Z-score |
 | `effect_score` | `creative` |  | &check; | Effect: "Creative" |
 | `effect_score` | `energetic` |  | &check; | Effect: "Energetic" |
 | `effect_score` | `euphoric` |  | &check; | Effect: "Euphoric" |
@@ -213,7 +213,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 | `flavor_score` | `vanilla` |  | &check; | Flavor: "Vanilla" |
 | `flavor_score` | `violet` |  | &check; | Flavor: "Violet" |
 | `flavor_score` | `woody` |  | &check; | Flavor: "Woody" |
-| `lab_summary` | `data_completeness` |  | &check; | A measure of the presence of cannabinoid and terpene data after aggregating samples (see [here](#data_completeness) for definition) |
+| `lab_summary` | `data_completeness` |  | &check; | A measure of the presence of cannabinoid and terpene data after aggregating samples (see [here](#data-completeness) for definition) |
 | `lab_summary` | `total_cannabs` |  | &check; | Average sum of cannabinoid measurements (i.e. sum the cannabinoid measurements for each sample and then average across all samples of the given strain) |
 | `lab_summary` | `total_terps` |  | &check; | Average sum of terpene measurements (i.e. sum the terpene measurements for each sample and then average across all samples of the given strain) |
 | `lab_summary` | `variability_score` |  | &check; | Average pairwise euclidean distance between cannabinoid and terpene measurement vectors for samples identified as the given strain |
@@ -275,7 +275,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 
 Average terpene measurements are calculated after grouping samples into clusters using [DBSCAN clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) and then averaging terpene measurements of samples that are assigned to the dominant cluster(s)
 
-### How is the chemotype of a sample determined?**
+### How is the chemotype of a sample determined?
 
 ```
 if CBD is null or THC is null or CBD and THC are both 0
