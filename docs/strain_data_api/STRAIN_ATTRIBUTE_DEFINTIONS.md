@@ -23,7 +23,7 @@ Unless otherwise specified, definitions for attributes of the following attribut
 
 | Type | Name | Standard tier | Pro tier | Definition |
 | --- | --- | :---: | :---: | --- |
-| `analytics` | `ga_target_dates` |  | &check; | Target dates used to when counting unique pageviews. Value has the following form: `{"year1": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}, "year2": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}}` |
+| `analytics` | `ga_target_dates` |  | &check; | Target dates used to count unique pageviews. Value has the following form: `{"year1": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}, "year2": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}}` |
 | `analytics` | `is_trending` |  | &check; | Boolean value indicating whether the given strain is trending according to unique pageview counts/growth (see [here](#what-does-is_trending-mean) for definition) |
 | `analytics` | `percent_change` |  | &check; | Year-over-year percent change in the percentage of unique strain pageviews attributed to the given strain |
 | `analytics` | `pop_rank` |  | &check; | Rank according to the count of unique pageviews attributed to the given strain for two consecutive years. The higher the count of unique pageviews, the lower the rank. |
