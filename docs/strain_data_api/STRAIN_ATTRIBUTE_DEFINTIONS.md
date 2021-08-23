@@ -327,10 +327,10 @@ Taken from IMDb (see [here](https://help.imdb.com/article/imdb/track-movies-tv/r
 ```
 
 where:
-- `r` = average vote for given trait category/slug
-- `v` = number of votes for the given slug
-- `m` = minimum votes required
-- `c` = average for given trait category for all slugs
+- `r`: average vote for given trait category/slug
+- `v`: number of votes for the given slug
+- `m`: minimum votes required
+- `c`: average for given trait category for all slugs
 
 ### What does "is_trending" mean?
 
