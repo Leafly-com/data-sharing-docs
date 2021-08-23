@@ -23,6 +23,8 @@ Use this doc to determine the composition of each data source per subscription t
 | `attribute_name` | `varchar` | | Name of the strain attribute measured |
 | `attribute_value` | `varchar` | &check; | Value of the strain attribute measured |
 
+> See [here](STRAIN_ATTRIBUTE_DEFINTIONS.md "Strain attribute definitions") for definitions of strain attributes.
+
 **Data Source:** Info
 
 | Column name | Data type | Is nullable? | Description |
