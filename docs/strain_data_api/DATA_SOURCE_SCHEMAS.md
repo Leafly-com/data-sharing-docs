@@ -23,7 +23,7 @@ Use this doc to determine the composition of each data source per subscription t
 | `attribute_name` | `str` | | Name of the strain attribute measured |
 | `attribute_value` | `str` | &check; | Value of the strain attribute measured |
 
-> Note: The specific attributes that are included differs between tiers. See [here](STRAIN_ATTRIBUTE_DELINEATIONS.md "Strain attribute delineations") to find out which attributes are included in each tier and for attribute definitions.
+> Note: The specific attributes that are included differs between tiers. See [here](STRAIN_ATTRIBUTE_DEFINITIONS.md "Strain attribute definitions") to find out which attributes are included in each tier and for attribute definitions.
 
 **Data Source:** Info
 
