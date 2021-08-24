@@ -2,9 +2,9 @@
 
 This doc provides a definition for each distinct strain attribute.
 
-**Generic attribute type definitions**:
+**Generic attribute category definitions**:
 
-Unless otherwise specified, definitions for attributes of the following attribute types are the same.
+Unless otherwise specified, definitions for attributes of the following attribute categories are the same.
 
 - `condition_count`: Count of strain reviews where the strain is identified as helping with the given condition
 - `condition_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as helping with the given condition
@@ -18,10 +18,10 @@ Unless otherwise specified, definitions for attributes of the following attribut
 - `symptom_score`: Z-score of weighted rating (see [here](#weighted-rating-formula) for definition) using the count of strain reviews where the strain is identified as producing the given symptom
 
 **Notes**:
-- Any `*_count` or `*_score` type attribute is sourced from Leafly strain reviews that are publicly available, moderator-approved, and not deleted
+- Any `*_count` or `*_score` category attribute is sourced from Leafly strain reviews that are publicly available, moderator-approved, and not deleted
 - Any mention of "unique pageviews" refers to data from Google Analytics
 
-| Type | Name | Standard tier | Pro tier | Definition |
+| Category | Name | Standard tier | Pro tier | Definition |
 | --- | --- | :---: | :---: | --- |
 | `analytics` | `ga_target_dates` |  | &check; | Target dates used to count unique pageviews. Value has the following form: <pre>{"year1": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}, "year2": {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}}</pre> |
 | `analytics` | `is_trending` |  | &check; | Boolean value indicating whether the given strain is trending according to unique pageview counts/growth (see [here](#what-does-is_trending-mean) for definition) |
